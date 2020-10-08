@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -147,10 +148,10 @@ namespace TechJobsConsole
             {
                 foreach (KeyValuePair<string, string> entry in AllJobs[i])
                 {
-                    if (value == entry.Key.ToLower() || value == entry.Value.ToLower())
+                    if (entry.Key.ToLower().Contains(value) || entry.Value.ToLower().Contains(value))
                     {
                         filter.Add(AllJobs[i]);
-                    }
+                    } 
                 }
             }
             return filter;

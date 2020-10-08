@@ -118,6 +118,11 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
+            if (someJobs.Count == 0)
+            {
+                Console.WriteLine("No Jobs Found");
+                return;
+            }
             for (int i = 0; i < someJobs.Count; i++)
             {
                 Console.WriteLine("*****");
@@ -126,7 +131,6 @@ namespace TechJobsConsole
                     Console.WriteLine(entry.Key + ": " + entry.Value);
                 }
             }
-            Console.WriteLine("*****");
         }
     }
 }
